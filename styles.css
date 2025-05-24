@@ -1,0 +1,418 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: dancing script;
+        }
+
+        .song-details {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        #audioPlayer {
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .spotify-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #1DB954;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .spotify-link:hover {
+            background: #1ed760;
+            transform: translateY(-2px);
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+        }
+        h1.story-title {
+    font-family: cursive;
+}
+
+        .journey-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .story-card {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: rgba(255, 255, 255, 2%);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 20px 0;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideIn 0.6s forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .story-title {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #e94560;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .letter {
+            font-size: 1.6em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .choice-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .choice-btn {
+            background: #e94560;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+
+        .choice-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+        }
+
+        .polaroid {
+            background: white;
+            padding: 15px;
+            padding-bottom: 50px;
+            transform: rotate(-3deg) scale(1);
+            color: #333;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 300px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .polaroid:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .message-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .floating-hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            animation: float 4s ease-in infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(1);
+                opacity: 0;
+            }
+        }
+
+        .mini-game {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .word-puzzle {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .puzzle-letter {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #e94560, #ff6b6b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+            font-weight: bold;
+            font-size: 1.2em;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .puzzle-letter:hover {
+            transform: scale(1.1);
+        }
+
+        .hidden-message {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            padding: 30px;
+            border-radius: 0;
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            z-index: 1000;
+            display: none;
+        }
+
+        .reveal {
+            height: 200px;
+        }
+
+        .song-input {
+            width: calc(100% - 120px);  /* Make room for search button */
+            padding: 12px;
+            border-radius: 10px;
+            border: 2px solid #e94560;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1.1em;
+            margin: 15px 0;
+        }
+
+        .song-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        #songResult {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        #songResult iframe {
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .typewriter {
+            overflow: hidden;
+            white-space: pre-wrap;
+            margin: 0 auto;
+            animation: fadeIn 2s ease-in;
+            line-height: 1.6;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .custom-player {
+            width: 100%;
+            margin: 15px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .custom-player iframe {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            display: block;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        #playerContainer {
+            width: 100%;
+        }
+
+        #playerContainer iframe {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .puzzle-celebration {
+            position: fixed;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .celebration-emoji {
+            font-size: 40px;
+            opacity: 0;
+            animation: floatUp 2s forwards;
+            position: absolute;
+            bottom: 0;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .custom-player audio {
+            width: 100%;
+            height: 40px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .custom-player audio::-webkit-media-controls-panel {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .custom-player audio::-webkit-media-controls-current-time-display,
+        .custom-player audio::-webkit-media-controls-time-remaining-display {
+            color: white;
+        }
+
+        .song-details {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .spotify-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #1DB954;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .spotify-link:hover {
+            background: #1ed760;
+            transform: translateY(-2px);
+        }
+
+        .glow {
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #e94560, 0 0 10px #e94560, 0 0 15px #e94560, 0 0 20px #e94560;
+            }
+            100% {
+                text-shadow: 0 0 10px #e94560, 0 0 20px #e94560, 0 0 30px #e94560, 0 0 40px #e94560;
+            }
+        }
+
+        /* Initially hide the next message button */
+        #nextMessageButton {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .message-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            z-index: 1000;
+            display: none;
+            padding: 30px;
+            overflow-y: auto;
+            box-sizing: border-box;
+        }
+
+        .message-box {
+            max-height: 100%;
+            overflow-y: auto;
+            padding: 0px;
+            border-radius: 8px;
+            background: rgb(0, 0, 0);
+        }
+
+        .clickable-text {
+            color: #e94560;
+            cursor: pointer;
+            text-decoration: underline;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        /* Media query specifically for Narzo 50a */
+/* Media query for Narzo 50a based on logical resolution */
+@media screen and (min-width: 360px) and (max-width: 800px) and (orientation: portrait) {
+    .puzzle-letter {
+        width: 35px;
+        height: 40px;
+    }
+}
