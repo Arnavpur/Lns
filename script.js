@@ -153,14 +153,15 @@ Honestly, I’ve been meaning to say this... You’re beautiful. Not just your s
 
 If I could steal a moment with you, just us, I’d want it to be under the stars, sharing stories and silly jokes. Or maybe just vibing to your favorite playlist.
 
-What do you say? Coffee on campus sometime? Or maybe a spontaneous pizza run?
+I want us go grow together, be with you every moment even when youre sad or not feeling well , even with your moods swings and period anger i want you always and forever?
+❣️
 
-Either way, I just really want to know you better—because every message with you feels like magic.
+I just really want to know you better—because every message with you feels like magic.
 
 From someone who's already enchanted,
 Your Secret Admirer`;
 
-    const nextMessage = `Shreya, you’re still here? That makes me really happy. ☺️
+    const nextMessage = `Shreya, you’re mine 🥺 That makes me the luckiest man alive. ☺️
 
 You’ve got this effortless charm that makes the ordinary feel special. I don’t know if you realize how much joy you bring to someone like me just by being... you.
 
