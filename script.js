@@ -167,7 +167,7 @@ You’ve got this effortless charm that makes the ordinary feel special. I don�
 
 It’s not just a little crush. It’s the way you brighten my day without trying. It’s the way your smile plays on my mind long after I’ve seen it.
 
-So here I am—leaving a little piece of my heart on this screen, hoping maybe someday, I can give you the rest in person.`;
+So here I am—leaving a little piece of my heart on this screen, soon I'll be there with you so that  I can give you the rest in person.`;
 
     function typeWriterEffect(message, callback) {
         const messageBox = document.getElementById('specialMessage');
